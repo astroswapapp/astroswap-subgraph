@@ -1,6 +1,6 @@
 specVersion: 0.0.2
-description: Wagyuswap is a decentralized protocol for automated token exchange on Velas.
-repository: https://github.com/wagyuswapapp
+description: Astroswap is a decentralized protocol for automated token exchange on Velas.
+repository: https://github.com/astroswapapp
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,9 +8,9 @@ dataSources:
     name: Factory
     network: velas
     source:
-      address: "0x69f3212344a38b35844cce4864c2af9c717f35e3"
+      address: "0x4746b70d12102E21784c1B48Aa306bd3f06CD3b1"
       abi: Factory
-      startBlock: 178738
+      startBlock: 1886545
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4

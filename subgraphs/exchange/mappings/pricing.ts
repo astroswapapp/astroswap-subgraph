@@ -3,12 +3,12 @@ import { BigDecimal, Address } from "@graphprotocol/graph-ts/index";
 import { Pair, Token, Bundle } from "../generated/schema";
 import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from "./utils";
 // TODO:
-let WVLX_ADDRESS = "0xc579d1f3cf86749e05cd06f7ade17856c2ce3126";
-let USDT_WVLX_PAIR = "0x7f3cb73fc470c2c9f543fdd17df4de0e97b51a97"; // created block 648115
+let ADA_ADDRESS = "0x6292d721d00bddaf683e1e64e4fcc9588c95398d";
+let USDT_ADA_PAIR = "0xba1af83c0fc66f5cdd17afc0cc8b077c3820d934";
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
-  let usdtPair = Pair.load(USDT_WVLX_PAIR); // usdt is token0
+  let usdtPair = Pair.load(USDT_ADA_PAIR); // usdt is token0
 
   if (usdtPair !== null) {
     return usdtPair.token0Price;
@@ -18,22 +18,22 @@ export function getBnbPriceInUSD(): BigDecimal {
 }
 // TODO:
 // token where amounts should contribute to tracked volume and liquidity
-let WHITELIST: string[] = [
-  "0xc579d1f3cf86749e05cd06f7ade17856c2ce3126", // WVLX
-  "0xc111c29a988ae0c0087d97b33c6e6766808a3bd3", // BUSD
-  "0x01445c31581c354b7338ac35693ab2001b50b9ae", // USDT
-  "0xe2c120f188ebd5389f71cf4d9c16d05b62a58993", // USDC
-  "0x85219708c49aa701871ad330a94ea0f41dff24ca", // WETH
-];
+// let WHITELIST: string[] = [
+//   "0xc579d1f3cf86749e05cd06f7ade17856c2ce3126", // ADA
+//   "0xc111c29a988ae0c0087d97b33c6e6766808a3bd3", // BUSD
+//   "0x01445c31581c354b7338ac35693ab2001b50b9ae", // USDT
+//   "0xe2c120f188ebd5389f71cf4d9c16d05b62a58993", // USDC
+//   "0x85219708c49aa701871ad330a94ea0f41dff24ca", // WETH
+// ];
 
 // tesnet
-// let WHITELIST: string[] = [
-//   "0x071da4a38460bb14686c1d44d85a7bdad0d6bac5", // WVLX
-//   "0xe2172a8e1762ae9962a59ee88a731522a61a4cc9", // BUSD
-//   "0x6ef054b3e3c3c83e14527e8fa593c2c4435a6ea4", // USDT
-//   "0x6b82bdb5a1adffa3816d1f942d60f0269647c646", // USDC
-//   "0x3538c7f88adbc8ad1f435f7ea70287e26b926344", // WETH
-// ];
+let WHITELIST: string[] = [
+  "0x6292d721d00bddaf683e1e64e4fcc9588c95398d", // ADA
+  "0xe2172a8e1762ae9962a59ee88a731522a61a4cc9", // BUSD
+  "0x6ef054b3e3c3c83e14527e8fa593c2c4435a6ea4", // USDT
+  "0x6b82bdb5a1adffa3816d1f942d60f0269647c646", // USDC
+  "0x3538c7f88adbc8ad1f435f7ea70287e26b926344", // WETH
+];
 
 // minimum liquidity for price to get tracked
 let MINIMUM_LIQUIDITY_THRESHOLD_BNB = BigDecimal.fromString("10");
@@ -43,7 +43,7 @@ let MINIMUM_LIQUIDITY_THRESHOLD_BNB = BigDecimal.fromString("10");
  * @todo update to be derived BNB (add stablecoin estimates)
  **/
 export function findBnbPerToken(token: Token): BigDecimal {
-  if (token.id == WVLX_ADDRESS) {
+  if (token.id == ADA_ADDRESS) {
     return ONE_BD;
   }
   // loop through whitelist and check if paired with any

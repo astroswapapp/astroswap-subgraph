@@ -1,10 +1,10 @@
 {
-  "name": "wagyuswap-subgraph",
-  "description": "Wagyuswapp Subgraph",
+  "name": "astroswap-subgraph",
+  "description": "Astroswap Subgraph",
   "version": "2.0.0",
   "private": true,
-  "repository": "git@github.com:wagyuswapapp/wagyu-subgraph.git",
-  "author": "Wagyuswap",
+  "repository": "git@github.com:astroswap/wagyu-subgraph.git",
+  "author": "Astroswap",
   "license": "GPL-3.0-or-later",
   "workspaces": [
     "subgraphs/**/*"
