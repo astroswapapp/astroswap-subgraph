@@ -11,7 +11,7 @@ export let ADDRESS_ZERO = "0x0000000000000000000000000000000000000000";
 // testnet
 // export let FACTORY_ADDRESS = "0x4746b70d12102e21784c1b48aa306bd3f06cd3b1";
 // mainnet
-export let FACTORY_ADDRESS = "0x793fcf9cf2139f59f1b50c64a3ae99c508311937";
+export let FACTORY_ADDRESS = "0xe82d721a6cdec2f86e9fca074ff671c8621f8459";
 
 export let ZERO_BI = BigInt.fromI32(0);
 export let ONE_BI = BigInt.fromI32(1);

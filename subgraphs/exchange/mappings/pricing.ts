@@ -9,7 +9,7 @@ import { ZERO_BD, factoryContract, ADDRESS_ZERO, ONE_BD } from "./utils";
 // let ADA_BUSD_PAIR = "0xba1af83c0fc66f5cdd17afc0cc8b077c3820d934";
 // mainnet
 let ADA_ADDRESS = "0x3611fbfb06ffbcef9afb210f6ace86742e6c14a4";
-let ADA_BUSD_PAIR = "0xb60765b8f8e83c429980e3acef9fec455d7db44c";
+let ADA_BUSD_PAIR = "0xc12e7e665b7d6537f87635655e70f7387da12d90";
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
