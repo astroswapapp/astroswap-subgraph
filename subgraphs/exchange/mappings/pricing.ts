@@ -13,10 +13,10 @@ let ADA_BUSD_PAIR = "0xc12e7e665b7d6537f87635655e70f7387da12d90";
 
 export function getBnbPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
-  let usdtPair = Pair.load(ADA_BUSD_PAIR); // usdt is token0
+  let usdtPair = Pair.load(ADA_BUSD_PAIR); // usdt is token1
 
   if (usdtPair !== null) {
-    return usdtPair.token0Price;
+    return usdtPair.token1Price;
   } else {
     return ZERO_BD;
   }
